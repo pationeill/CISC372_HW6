@@ -134,7 +134,7 @@ int main(int argc, char **argv)
     cudaMalloc(&dest, sizeof(float) * pWidth * height);
 
     cudaMemcpy(dest_img, img, sizeof(uint8_t) * pWidth * height, cudaMemcpyHostToDevice);
-    //cudaMemcpy(dest, dest_d, sizeof(float) * pWidth * height, cudaMemcpyHostToDevice);
+    cudaMemcpy(dest_d, dest, sizeof(float) * pWidth * height, cudaMemcpyHostToDevice);
     //cudaMemcpy(mid, mid_d, sizeof(float) * pWidth * height, cudaMemcpyHostToDevice);
 
     int block_size = 256;
